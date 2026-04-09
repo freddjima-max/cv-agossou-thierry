@@ -119,6 +119,35 @@
 
     .btn-cv2:active { transform: translateY(0); }
 
+    /* secondary button */
+    .btn-en {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2rem;
+      background: transparent;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 600;
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, color .2s, transform .15s;
+    }
+
+    .btn-en:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-en:active { transform: translateY(0); }
+
+    @media (min-width: 768px) {
+      .btn-en { font-size: 1.15rem; padding: 1rem 2.4rem; }
+    }
+
     /* QR section */
     .qr-section {
       text-align: center;
@@ -179,15 +208,25 @@
   <!-- BOTTOM : bouton + QR -->
   <div class="bottom">
 
-    <!-- CTA -->
-    <a
-      class="btn-cv2"
-      href="https://freddjima-max.github.io/cv-agossou-thierry/cv-long.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      📄 Ouvrir le CV &laquo;&nbsp;long&nbsp;&raquo; 39 pages
-    </a>
+    <!-- CTAs -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+      <a
+        class="btn-cv2"
+        href="https://freddjima-max.github.io/cv-agossou-thierry/cv-long.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📄 Ouvrir le CV &laquo;&nbsp;long&nbsp;&raquo; 39 pages
+      </a>
+      <a
+        class="btn-en"
+        href="https://freddjima-max.github.io/cv-agossou-thierry/cv-english.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🌐 English CV (World Bank)
+      </a>
+    </div>
 
     <!-- QR CODE -->
     <div class="qr-section">
