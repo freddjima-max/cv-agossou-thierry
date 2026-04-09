@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!--
+==========================================================
+  FICHIERS PDF INTÉGRÉS (chemins relatifs — même dossier)
+==========================================================
+
+  CV court (iframe) : Golden CV_ AGOSSOU_Oct_2025.pdf
+  CV long (bouton)  : 2026-12-03-CV AGOSSOU F.THIERRY JOEL vf.pdf
+
+  Si tu déploies en ligne, remplace les src/href par des URLs.
+  Le QR code pointe sur l'URL courante en local.
+  Pour la version déployée, remplace [[QR_CODE_URL]] par
+  l'URL de ta page (ex: https://tonpseudo.github.io/cv-at/).
+==========================================================
+-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — AGOSSOU Thierry</title>
+
+  <!-- QRCode.js via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #111111;
+      --surface:  #1a1a1a;
+      --border:   #2a2a2a;
+      --accent:   #4f8ef7;
+      --accent-h: #6fa3ff;
+      --text:     #f0f0f0;
+      --muted:    #888;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 0 0 2rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    header h1 {
+      font-size: clamp(1.4rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    header p.subtitle {
+      margin-top: .4rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    /* ── PDF VIEWER ── */
+    .viewer-wrap {
+      flex: 1;
+      padding: 1.25rem 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .viewer-label {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+
+    .pdf-frame {
+      width: 100%;
+      height: 72vh;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #000;
+    }
+
+    /* ── BOTTOM SECTION ── */
+    .bottom {
+      padding: 1.5rem 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* big CTA button */
+    .btn-cv2 {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(79,142,247,.35);
+    }
+
+    .btn-cv2:hover {
+      background: var(--accent-h);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(79,142,247,.5);
+    }
+
+    .btn-cv2:active { transform: translateY(0); }
+
+    /* QR section */
+    .qr-section {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .qr-section p {
+      font-size: .9rem;
+      color: var(--muted);
+      max-width: 28ch;
+    }
+
+    #qrcode {
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+      line-height: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (min-width: 768px) {
+      .bottom {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-cv2 { font-size: 1.15rem; padding: 1rem 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Curriculum Vitae de AGOSSOU Thierry</h1>
+    <p class="subtitle">Document professionnel — version intégrée</p>
+  </header>
+
+  <!-- PDF VIEWER -->
+  <div class="viewer-wrap">
+    <span class="viewer-label">CV — aperçu direct</span>
+    <iframe
+      class="pdf-frame"
+      src="Golden CV_ AGOSSOU_Oct_2025.pdf"
+      title="CV AGOSSOU Thierry"
+      allow="fullscreen"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <!-- BOTTOM : bouton + QR -->
+  <div class="bottom">
+
+    <!-- CTA -->
+    <a
+      class="btn-cv2"
+      href="2026-12-03-CV AGOSSOU F.THIERRY JOEL vf.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      📄 Ouvrir le CV &laquo;&nbsp;long&nbsp;&raquo; 39 pages
+    </a>
+
+    <!-- QR CODE -->
+    <div class="qr-section">
+      <p>Scannez ce QR code pour accéder à mes documents professionnels.</p>
+      <div id="qrcode"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // Remplace [[QR_CODE_URL]] par l'URL de ta page déployée.
+    // En local, on utilise l'URL courante comme fallback.
+    const qrUrl = "[[QR_CODE_URL]]".startsWith("[[")
+      ? window.location.href
+      : "[[QR_CODE_URL]]";
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: qrUrl,
+      width: 160,
+      height: 160,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  </script>
+
+</body>
+</html>
