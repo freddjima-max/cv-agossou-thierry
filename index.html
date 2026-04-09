@@ -2,18 +2,7 @@
 <html lang="fr">
 <head>
 <!--
-==========================================================
-  FICHIERS PDF INTÉGRÉS (chemins relatifs — même dossier)
-==========================================================
 
-  CV court (iframe) : Golden CV_ AGOSSOU_Oct_2025.pdf
-  CV long (bouton)  : 2026-12-03-CV AGOSSOU F.THIERRY JOEL vf.pdf
-
-  Si tu déploies en ligne, remplace les src/href par des URLs.
-  Le QR code pointe sur l'URL courante en local.
-  Pour la version déployée, remplace [[QR_CODE_URL]] par
-  l'URL de ta page (ex: https://tonpseudo.github.io/cv-at/).
-==========================================================
 -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -209,11 +198,7 @@
   </div>
 
   <script>
-    // Remplace [[QR_CODE_URL]] par l'URL de ta page déployée.
-    // En local, on utilise l'URL courante comme fallback.
-    const qrUrl = "[[QR_CODE_URL]]".startsWith("[[")
-      ? window.location.href
-      : "[[QR_CODE_URL]]";
+    const qrUrl = "https://freddjima-max.github.io/cv-agossou-thierry/";
 
     new QRCode(document.getElementById("qrcode"), {
       text: qrUrl,
